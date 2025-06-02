@@ -24,3 +24,18 @@ func Test_Add (t *testing.T) {
 		}
 	}
 }
+
+func Test_Subtract(t *testing.T) {
+	tests := []Test{
+		{5, 2, 3, nil},
+		{10, 5, 5, nil},
+		{-1, -1, 0, nil},
+	}
+
+	for _, test := range tests {
+		result := Subtract(test.num1, test.num2)
+		if result != test.ExpResult {
+			t.Errorf("Subtract(%d, %d) = %d; want %d", test.num1, test.num2, result, test.ExpResult)
+		}
+	}
+}
