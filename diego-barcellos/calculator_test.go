@@ -39,3 +39,18 @@ func Test_Subtract(t *testing.T) {
 		}
 	}
 }
+
+func Test_Multiply(t *testing.T) {
+	tests := []Test{
+		{2, 3, 6, nil},
+		{5, 5, 25, nil},
+		{-1, -1, 1, nil},
+	}
+
+	for _, test := range tests {
+		result := Multiply(test.num1, test.num2)
+		if result != test.ExpResult {
+			t.Errorf("Multiply(%d, %d) = %d; want %d", test.num1, test.num2, result, test.ExpResult)
+		}
+	}
+}
